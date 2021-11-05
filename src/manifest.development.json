@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "ics",
+    "description": "对于各种请求的修改重定向",
+    "version": "0.0.1",
+    "options_page": "options.html",
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "alarms", "storage", "webRequest", "webRequestBlocking", "<all_urls>", "tabs","background","experimental"
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "background":{
+        "page":"background.html",
+        "persistent": true
+    }
+}
