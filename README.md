@@ -1,4 +1,4 @@
-# ics
+# NMT
 
 ## Project setup
 ```
@@ -20,5 +20,5 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 项目介绍
+Chrome的插件，可对修改http请求进行拦截或者重定向、或者修改headers的部分参数
