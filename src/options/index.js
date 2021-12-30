@@ -77,7 +77,9 @@ import {
   Loading,
   MessageBox,
   Message,
-  Notification
+  Notification,
+  Scrollbar,
+  Popconfirm,
 } from 'element-ui';
 
 
@@ -154,7 +156,8 @@ Vue.use(Calendar);
 Vue.use(Backtop);
 Vue.use(PageHeader);
 Vue.use(CascaderPanel);
-
+Vue.use(Scrollbar);
+Vue.use(Popconfirm);
 Vue.use(Loading.directive);
 
 Vue.prototype.$loading = Loading.service;

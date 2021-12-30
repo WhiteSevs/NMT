@@ -1,18 +1,32 @@
 {
     "manifest_version": 2,
-    "name": "ics",
-    "description": "对于各种请求的修改重定向",
+    "name": "NMT",
+    "description": "全称:网络调试工具(network modification tool) 对于各种请求的修改重定向，以及拦截修改headers",
     "version": "0.0.1",
     "options_page": "options.html",
+    "default_locale": "zh_CN",
     "browser_action": {
         "default_popup": "popup.html"
     },
+    "icons": {
+        "16": "assets/logo.png",
+        "48": "assets/logo.png",
+        "128": "assets/logo.png"
+     },
     "permissions": [
-        "alarms", "storage", "webRequest", "webRequestBlocking", "<all_urls>", "tabs","background"
+        "alarms", 
+        "storage", 
+        "webRequest", 
+        "webRequestBlocking", 
+        "<all_urls>", 
+        "tabs",
+        "background",
+        "experimental",
+        "urn:*"
     ],
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
-    "background":{
-        "page":"./background/index.html",
+    "background": {
+        "page": "./background/index.html",
         "persistent": true
     }
 }

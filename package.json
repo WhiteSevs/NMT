@@ -1,16 +1,20 @@
 {
-  "name": "ics",
+  "name": "network-modification-tools",
   "version": "0.1.0",
   "private": true,
+  "description": "网络修改工具,一、对请求的链接进行拦截、重定向；二、对请求的headers进行修改；三、对响应的headers进行修改。",
+  "author": "whitesev",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-watch": "vue-cli-service build-watch"
+    "build-watch-prod": "vue-cli-service build --watch --mode production --target app --dashboard",
+    "build-watch-dev": "vue-cli-service build-watch"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
     "element-ui": "^2.3.6",
+    "file-saver": "^2.0.5",
     "vue": "^2.6.11"
   },
   "devDependencies": {
@@ -22,7 +26,6 @@
     "copy-webpack-plugin": "^4.6.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "sass-loader": "^12.3.0",
     "vue-cli-plugin-chrome-ext": "0.0.5",
     "vue-cli-plugin-element-ui": "~1.1.4",
     "vue-template-compiler": "^2.6.11"
@@ -33,7 +36,7 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
+      "plugin:vue/recommended",
       "eslint:recommended"
     ],
     "parserOptions": {

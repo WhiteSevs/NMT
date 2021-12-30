@@ -2,8 +2,8 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 
-function resolve(dir){
-  return path.join(__dirname,dir)//path.join(__dirname)设置绝对路径
+function resolve(dir) {
+  return path.join(__dirname, dir) //path.join(__dirname)设置绝对路径
 }
 // Generate pages object
 const pagesObj = {};
@@ -26,29 +26,37 @@ chromeName.forEach(name => {
 //   };
 // });
 const plugins =
-  process.env.NODE_ENV === "development"
-    ? [
-        {
-          from: path.resolve("src/manifest.production.json"),
-          to: `${path.resolve("dist")}/manifest.json`
-        }
-      ]
-    : [
-        {
-          from: path.resolve("src/manifest.development.json"),
-          to: `${path.resolve("dist")}/manifest.json`
-        }
-      ];
+  process.env.NODE_ENV === "development" ?
+  [{
+    from: path.resolve("src/manifest.production.json"),
+    to: `${path.resolve("dist")}/manifest.json`
+  },{
+    from: path.resolve("src/assets"),
+    to: `${path.resolve("dist")}/assets`
+  },{
+    from: path.resolve("_locales"),
+    to: `${path.resolve("dist")}/_locales`
+  }] :
+  [{
+    from: path.resolve("src/manifest.development.json"),
+    to: `${path.resolve("dist")}/manifest.json`
+  },{
+    from: path.resolve("src/assets"),
+    to: `${path.resolve("dist")}/assets`
+  },{
+    from: path.resolve("_locales/"),
+    to: `${path.resolve("dist")}/_locales`
+  }];
 
 module.exports = {
   pages: pagesObj,
+
   configureWebpack: {
     plugins: [CopyWebpackPlugin(plugins)]
   },
-  chainWebpack:(config)=>{
+
+  chainWebpack: (config) => {
     config.resolve.alias
-    .set('@',resolve('./src'))
-    //set第一个参数：设置的别名，第二个参数：设置的路径
-　　　　
-}
+      .set('@', resolve('./src'))//set第一个参数：设置的别名，第二个参数：设置的路径
+  }
 };

@@ -1,9 +1,9 @@
 import Vue from 'vue'
+import App from 'App.vue'
 import ElementUI from 'element-ui'
 import './styles.scss'
 
 Vue.use(ElementUI)
-Vue.component("app-component", AppComponent);
 Vue.config.productionTip = false;
 
 Vue.component("app-component", App);
